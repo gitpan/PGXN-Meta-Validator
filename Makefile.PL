@@ -7,13 +7,17 @@ WriteMakefile
   'VERSION_FROM' => 'lib/PGXN/Meta/Validator.pm',
   'PREREQ_PM' => {
                    'Carp' => 0,
+                   'Getopt::Long' => 0,
                    'JSON' => 0,
                    'Module::Build' => '0.30',
+                   'Pod::Usage' => 0,
                    'SemVer' => '0.002000',
                    'Test::More' => '0.88'
                  },
   'INSTALLDIRS' => 'site',
-  'EXE_FILES' => [],
+  'EXE_FILES' => [
+                   'bin/validate_pgxn_meta'
+                 ],
   'PL_FILES' => {}
 )
 ;
