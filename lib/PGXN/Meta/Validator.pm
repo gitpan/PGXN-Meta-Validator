@@ -6,7 +6,7 @@ use warnings;
 use SemVer;
 use JSON;
 use Carp qw(croak);
-our $VERSION = v0.11.0;
+our $VERSION = v0.12.0;
 
 =head1 Name
 
@@ -27,7 +27,8 @@ PGXN::Meta::Validator - Validate PGXN distribution metadata structures
 =head1 Description
 
 This module validates a PGXN Meta structure against the version of the the
-specification claimed in the C<meta-spec> field of the structure.
+specification claimed in the C<meta-spec> field of the structure. Currently,
+there is only v1.0.0.
 
 =cut
 
@@ -420,8 +421,8 @@ Validate that a prereq phase is one of "configure", "build", "test",
 
 =item * relation($self,$key,$value)
 
-Validate that a prereq relation is one of "requires", "recommends", or
-"suggests".
+Validate that a prereq relation is one of "requires", "recommends",
+"suggests", or "conflicts".
 
 =item * release_status($self,$key,$value)
 
@@ -733,7 +734,7 @@ sub phase {
     return 0;
 }
 
-my @valid_relations = qw/ requires recommends suggests /;
+my @valid_relations = qw/ requires recommends suggests conflicts/;
 sub relation {
     my ($self,$key) = @_;
     if(defined $key) {
