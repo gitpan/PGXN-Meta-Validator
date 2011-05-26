@@ -6,7 +6,7 @@ use warnings;
 use SemVer;
 use JSON;
 use Carp qw(croak);
-our $VERSION = v0.12.0;
+our $VERSION = v0.13.0;
 
 =head1 Name
 
@@ -554,7 +554,7 @@ sub string {
 sub lc_string {
     my ($self, $key, $value) = @_;
     $self->string($key, $value) or return 0;
-    return 1 if $value !~ /\p{XPosixUpper}/;
+    return 1 if $value !~ /\p{Upper}/;
     $self->_error( "'$value' is not a lowercase string" );
     return 0;
 }
