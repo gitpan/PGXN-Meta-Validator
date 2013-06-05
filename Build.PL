@@ -39,7 +39,7 @@ $class->new(
         'JSON'         => 0,
         'perl'         => 5.010,
         'Pod::Usage'   => 0,
-        'SemVer'       => '0.2.0',
+        'SemVer'       => '0.5.0',
     },
     recommends => {
         'Test::Pod'           => '1.41',
@@ -48,8 +48,8 @@ $class->new(
     meta_merge => {
         resources => {
             homepage   => 'http://search.cpan.org/dist/PGXN-Meta-Validator/',
-            bugtracker => 'http://github.com/theory/pgxn-meta-validator/issues/',
-            repository => 'http://github.com/theory/pgxn-meta-validator/tree/',
+            bugtracker => 'http://github.com/pgxn/pgxn-meta-validator/issues/',
+            repository => 'http://github.com/pgxn/pgxn-meta-validator/tree/',
         }
     },
 )->create_build_script;
